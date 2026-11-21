@@ -1,2 +1,7 @@
 # nixpacks.toml
-hi
+
+[phases.build]
+cmds = ["pip install -r requirements.txt"]
+
+[start]
+cmd = "gunicorn main:app --bind 0.0.0.0:$PORT"
